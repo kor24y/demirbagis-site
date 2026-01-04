@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bağış Yap - Demir Bağış</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link href="style.css" rel="stylesheet">
+    <style>
+        .donation-card {
+            border: none;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--shadow-sm);
+            transition: var(--transition);
+            height: 100%;
+        }
+
+        .donation-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--shadow-md);
+        }
+
+        .donation-header {
+            padding: 1.5rem;
+            color: white;
+            font-weight: 700;
+            font-size: 1.25rem;
+        }
+
+        .donation-body {
+            padding: 2rem;
+            background: white;
+        }
+
+        .donation-footer {
+            padding: 1.5rem;
+            background: #f8f9fa;
+            border-top: 1px solid #eee;
+        }
+
+        .progress-bar {
+            background-color: var(--primary-color);
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="fas fa-heart-pulse me-2"></i>Demir Bağış
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto align-items-center">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Ana Sayfa</a></li>
+                    <li class="nav-item"><a class="nav-link" href="hakkimizda.html">Hakkımızda</a></li>
+                    <li class="nav-item"><a class="nav-link" href="iletisim.html">İletişim</a></li>
+                    <li class="nav-item"><a class="nav-link active btn btn-donate ms-2" href="bagis.html">Bağış Yap</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container my-5 py-5">
+        <div class="text-center mb-5">
+            <h2 class="display-5 fw-bold text-primary">Aktif Kampanyalar</h2>
+            <p class="lead text-muted">Aşağıdaki kampanyalardan dilediğinizi seçerek umut olabilirsiniz.</p>
+        </div>
+
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="donation-card">
+                    <div class="donation-header" style="background-color: #FF5E62;">Eğitim
+                        Desteği</div>
+                    <div class="donation-body">
+                        <div class="d-flex align-items-center mb-3 text-warning">
+                            <i class="fas fa-book-reader fa-2x me-3"></i>
+                            <h5 class="card-title mb-0">Köy Okullarına Kitap</h5>
+                        </div>
+                        <p class="card-text text-muted">Uzak köylerdeki çocuklarımızın kırtasiye ve kitap ihtiyaçlarını
+                            karşılıyoruz.</p>
+                        <hr>
+                        <div class="mb-3">
+                            <div class="d-flex justify-content-between small mb-1">
+                                <span class="text-muted">Toplanan:</span>
+                                <span class="fw-bold text-primary">35.000 TL</span>
+                            </div>
+                            <div class="progress" style="height: 8px;">
+                                <div class="progress-bar bg-warning" role="progressbar" style="width: 70%"
+                                    aria-valuenow="70" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                        </div>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <strong>Hedef:</strong>
+                            <span class="badge bg-success">50.000 TL</span>
+                        </div>
+                    </div>
+                    <div class="donation-footer">
+                        <button onclick="bagisYap('Eğitim Desteği')" class="btn btn-outline-danger w-100 fw-bold">Bağış
+                            Yap</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="donation-card">
+                    <div class="donation-header" style="background-color: #2F80ED;">Gıda
+                        Yardımı</div>
+                    <div class="donation-body">
+                        <div class="d-flex align-items-center mb-3 text-info">
+                            <i class="fas fa-box-open fa-2x me-3"></i>
+                            <h5 class="card-title mb-0">Ramazan Kolisi</h5>
+                        </div>
+                        <p class="card-text text-muted">İhtiyaç sahibi ailelerin sofralarına sıcak bir yemek oluyoruz.
+                        </p>
+                        <hr>
+                        <div class="mb-3">
+                            <div class="d-flex justify-content-between small mb-1">
+                                <span class="text-muted">Toplanan:</span>
+                                <span class="fw-bold text-primary">65.000 TL</span>
+                            </div>
+                            <div class="progress" style="height: 8px;">
+                                <div class="progress-bar bg-info" role="progressbar" style="width: 65%"
+                                    aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                        </div>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <strong>Hedef:</strong>
+                            <span class="badge bg-success">100.000 TL</span>
+                        </div>
+                    </div>
+                    <div class="donation-footer">
+                        <button onclick="bagisYap('Gıda Yardımı')" class="btn btn-outline-danger w-100 fw-bold">Bağış
+                            Yap</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="donation-card">
+                    <div class="donation-header" style="background-color: #11998e;">Su
+                        Kuyusu</div>
+                    <div class="donation-body">
+                        <div class="d-flex align-items-center mb-3 text-success">
+                            <i class="fas fa-tint fa-2x me-3"></i>
+                            <h5 class="card-title mb-0">Afrika Su Kuyusu Projesi</h5>
+                        </div>
+                        <p class="card-text text-muted">Temiz suya ulaşamayan bölgelerde su kuyuları açıyoruz.</p>
+                        <hr>
+                        <div class="mb-3">
+                            <div class="d-flex justify-content-between small mb-1">
+                                <span class="text-muted">Toplanan:</span>
+                                <span class="fw-bold text-primary">120.000 TL</span>
+                            </div>
+                            <div class="progress" style="height: 8px;">
+                                <div class="progress-bar bg-success" role="progressbar" style="width: 48%"
+                                    aria-valuenow="48" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                        </div>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <strong>Hedef:</strong>
+                            <span class="badge bg-success">250.000 TL</span>
+                        </div>
+                    </div>
+                    <div class="donation-footer">
+                        <button onclick="bagisYap('Su Kuyusu')" class="btn btn-outline-danger w-100 fw-bold">Bağış
+                            Yap</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-4">
+                <div class="donation-card">
+                    <div class="donation-header" style="background-color: #9733ee;">Sağlık
+                        Yardımı</div>
+                    <div class="donation-body">
+                        <div class="d-flex align-items-center mb-3 text-secondary">
+
+                            <i class="fas fa-heartbeat fa-2x me-3" style="color: #da22ff;"></i>
+                            <h5 class="card-title mb-0">Tıbbi Malzeme ve İlaç</h5>
+                        </div>
+                        <p class="card-text text-muted">Hastanelere tıbbi cihaz ve ihtiyaç sahibi hastalara ilaç desteği
+                            sağlıyoruz.</p>
+                        <hr>
+                        <div class="mb-3">
+                            <div class="d-flex justify-content-between small mb-1">
+                                <span class="text-muted">Toplanan:</span>
+                                <span class="fw-bold text-primary">45.000 TL</span>
+                            </div>
+                            <div class="progress" style="height: 8px;">
+                                <div class="progress-bar" role="progressbar"
+                                    style="width: 30%; background-color: #da22ff;" aria-valuenow="30" aria-valuemin="0"
+                                    aria-valuemax="100"></div>
+                            </div>
+                        </div>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <strong>Hedef:</strong>
+                            <span class="badge bg-success">150.000 TL</span>
+                        </div>
+                    </div>
+                    <div class="donation-footer">
+                        <button onclick="bagisYap('Sağlık Yardımı')" class="btn btn-outline-danger w-100 fw-bold">Bağış
+                            Yap</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="donation-card">
+                    <div class="donation-header" style="background-color: #ed213a;">Afet
+                        Acil
+                        Yardım</div>
+                    <div class="donation-body">
+                        <div class="d-flex align-items-center mb-3 text-danger">
+                            <i class="fas fa-hands-helping fa-2x me-3"></i>
+                            <h5 class="card-title mb-0">Acil Durum Fonu</h5>
+                        </div>
+                        <p class="card-text text-muted">Deprem, sel gibi doğal afetlerde anında müdahale için hazır
+                            bekliyoruz.</p>
+                        <hr>
+                        <div class="mb-3">
+                            <div class="d-flex justify-content-between small mb-1">
+                                <span class="text-muted">Toplanan:</span>
+                                <span class="fw-bold text-primary">100.000 TL</span>
+                            </div>
+                            <div class="progress" style="height: 8px;">
+                                <div class="progress-bar bg-danger" role="progressbar" style="width: 20%"
+                                    aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                        </div>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <strong>Hedef:</strong>
+                            <span class="badge bg-success">500.000 TL</span>
+                        </div>
+                    </div>
+                    <div class="donation-footer">
+                        <button onclick="bagisYap('Afet Acil Yardım')"
+                            class="btn btn-outline-danger w-100 fw-bold">Bağış
+                            Yap</button>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="donation-card">
+                    <div class="donation-header" style="background-color: #8360c3;">Kış
+                        Yardımı
+                    </div>
+                    <div class="donation-body">
+                        <div class="d-flex align-items-center mb-3 text-info">
+                            <i class="fas fa-snowflake fa-2x me-3"></i>
+                            <h5 class="card-title mb-0">Yakacak ve Mont</h5>
+                        </div>
+                        <p class="card-text text-muted">Soğuk kış günlerinde ihtiyaç sahibi aileleri ısıtıyoruz.</p>
+                        <hr>
+                        <div class="mb-3">
+                            <div class="d-flex justify-content-between small mb-1">
+                                <span class="text-muted">Toplanan:</span>
+                                <span class="fw-bold text-primary">60.000 TL</span>
+                            </div>
+                            <div class="progress" style="height: 8px;">
+                                <div class="progress-bar bg-info" role="progressbar" style="width: 80%"
+                                    aria-valuenow="80" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                        </div>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <strong>Hedef:</strong>
+                            <span class="badge bg-success">75.000 TL</span>
+                        </div>
+                    </div>
+                    <div class="donation-footer">
+                        <button onclick="bagisYap('Kış Yardımı')" class="btn btn-outline-danger w-100 fw-bold">Bağış
+                            Yap</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="py-5 mt-5">
+        <div class="container text-center">
+            <h4 class="text-white mb-4">Demir Bağış</h4>
+            <div class="mb-4">
+                <a href="https://www.facebook.com/koray.demirci.148?locale=tr_TR" target="_blank"
+                    class="text-white mx-2"><i class="fab fa-facebook fa-lg"></i></a>
+                <a href="https://x.com/mestgu" target="_blank" class="text-white mx-2"><i
+                        class="fab fa-x-twitter fa-lg"></i></a>
+                <a href="https://www.instagram.com/kor24y/?theme=dark" target="_blank" class="text-white mx-2"><i
+                        class="fab fa-instagram fa-lg"></i></a>
+            </div>
+            <p class="mb-0">&copy; 2025 Demir Bağış Derneği. Tüm Hakları Saklıdır.</p>
+        </div>
+    </footer>
+
+    <script>
+        function bagisYap(kampanyaAdi) {
+            let miktar = prompt(kampanyaAdi + " için bağışlamak istediğiniz tutarı giriniz (TL):");
+            if (miktar != null && miktar != "") {
+                alert("Teşekkürler! " + miktar + " TL tutarındaki bağışınız " + kampanyaAdi + " havuzuna eklenmek üzere yönlendiriliyor.");
+            }
+        }
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
